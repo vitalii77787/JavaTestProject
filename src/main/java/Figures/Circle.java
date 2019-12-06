@@ -1,19 +1,15 @@
-package Test;
+package Figures;
+
+import Utils.Colour;
 
 public class Circle extends Figure {
 
     private double radius;
-    private String symbol = "*";
 
-    public Circle() {
-        this.radius = 5;
-        this.colour = Colour.Green;
-        this.name = "Circle";
-    }
-
-    public Circle(float radius, Colour colour) {
+    public Circle(double radius, Colour colour) {
         this.radius = radius;
         this.colour = colour;
+        this.name = this.getClass().getSimpleName();
     }
 
     @Override
@@ -40,13 +36,8 @@ public class Circle extends Figure {
     }
 
     @Override
-    public String GetColour() {
-        return this.colour.name();
-    }
-
-    @Override
-    public String GetInfo() {
-        return String.format("Figure: %s, Area: %s, radius: %s, colour: %s", this.name, GetFormatedData(GetArea()),
-                GetFormatedData(this.radius), this.GetColour());
+    public void DisplayInfo() {
+        System.out.println(String.format("Figure: %s, Area: %s, radius: %s, colour: %s", this.name, GetFormatedData(GetArea()),
+                GetFormatedData(this.radius), this.GetColour()));
     }
 }

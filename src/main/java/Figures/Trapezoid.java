@@ -1,18 +1,19 @@
-package Test;
+package Figures;
+
+import Utils.Colour;
 
 public class Trapezoid extends Figure {
 
     private double height;
     private double topBase;
     private double bottomBase;
-    private String symbol = "*";
 
-    public Trapezoid() {
-        this.topBase = 5;
-        this.bottomBase = 10;
-        this.height = 6;
-        this.colour = Colour.Green;
-        this.name = "Trapezoid";
+    public Trapezoid(double topBase, double bottomBase, double height, Colour colour) {
+        this.topBase = topBase;
+        this.bottomBase = bottomBase;
+        this.height = height;
+        this.colour = colour;
+        this.name = this.getClass().getSimpleName();
     }
 
     private double GetMediumLineLength() {
@@ -47,13 +48,8 @@ public class Trapezoid extends Figure {
     }
 
     @Override
-    protected String GetColour() {
-        return this.colour.name();
-    }
-
-    @Override
-    public String GetInfo() {
-        return String.format("Figure: %s, Area: %s, Side: %s, colour: %s", this.name,
-                GetFormatedData(GetArea()), GetFormatedData(GetSideLength()), this.GetColour());
+    public void DisplayInfo() {
+        System.out.println(String.format("Figure: %s, Area: %s, Side: %s, colour: %s", this.name,
+                GetFormatedData(GetArea()), GetFormatedData(GetSideLength()), this.GetColour()));
     }
 }

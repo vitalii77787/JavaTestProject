@@ -1,22 +1,17 @@
-package Test;
+package Figures;
+
+import Utils.Colour;
 
 public class Triangle extends Figure {
 
     private double height;
     private double side;
-    private String symbol = "*";
 
-    public Triangle() {
-        this.side = 3;
-        this.height = 4;
-        this.colour = Colour.Green;
-        this.name = "Triangle";
-    }
-
-    public Triangle(float side, float height, Colour colour) {
+    public Triangle(double side, double height, Colour colour) {
         this.side = side;
         this.height = height;
         this.colour = colour;
+        this.name = this.getClass().getSimpleName();
     }
 
     private double GetHypotenuseLength() {
@@ -35,17 +30,12 @@ public class Triangle extends Figure {
 
     @Override
     public double GetArea() {
-        return Math.round(this.side * this.height * 0.5f);
+        return this.side * this.height * 0.5;
     }
 
     @Override
-    public String GetColour() {
-        return this.colour.name();
-    }
-
-    @Override
-    public String GetInfo() {
-        return String.format("Figure: %s, Area: %s, Hypotenuse: %s, Colour: %s", this.name, GetFormatedData(GetArea()),
-        GetFormatedData(GetHypotenuseLength()), this.GetColour());
+    public void DisplayInfo() {
+        System.out.println(String.format("Figure: %s, Area: %s, Hypotenuse: %s, Colour: %s", this.name, GetFormatedData(GetArea()),
+        GetFormatedData(GetHypotenuseLength()), this.GetColour()));
     }
 }
