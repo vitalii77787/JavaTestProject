@@ -31,7 +31,7 @@ public class Rectangle extends Figure {
 
     @Override
     public void DisplayInfo() {
-        System.out.println(String.format("Figure: %s, Area: %s, side length: %s, colour: %s", this.name, GetFormatedData(GetArea()),
-                GetFormatedData(this.width), this.GetColour()));
+        System.out.println(String.format("Figure: %s, Area: %s, colour: %s", this.name, GetFormatedData(GetArea()),
+                this.GetColour()));
     }
 }

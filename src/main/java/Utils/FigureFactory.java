@@ -3,6 +3,7 @@ package Utils;
 import Figures.Circle;
 import Figures.Figure;
 import Figures.Rectangle;
+import Figures.Square;
 import Figures.Trapezoid;
 import Figures.Triangle;
 
@@ -29,6 +30,10 @@ public class FigureFactory {
             myFigure = new Trapezoid(ValueGenerator.GetRangedDoubleValue(InitialData.MinValue, InitialData.MaxValue),
                     ValueGenerator.GetRangedDoubleValue(InitialData.MinValue, InitialData.MaxValue),
                     ValueGenerator.GetRangedDoubleValue(InitialData.MinValue, InitialData.MaxValue),
+                    ValueGenerator.GetRandomColour());
+            break;
+        case Square:
+            myFigure = new Square(ValueGenerator.GetRangedDoubleValue(InitialData.MinValue, InitialData.MaxValue),
                     ValueGenerator.GetRandomColour());
             break;
         default:

@@ -1,5 +1,5 @@
 package Utils;
 
 public enum FigureType {
-    Rectangle, Triangle, Circle, Trapezoid
+    Rectangle, Triangle, Circle, Trapezoid, Square
 }
