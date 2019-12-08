@@ -4,23 +4,23 @@ import Utils.Colour;
 
 public class Triangle extends Figure {
 
-    private double height;
-    private double side;
+    private double firstLeg;
+    private double secondLeg;
 
-    public Triangle(double side, double height, Colour colour) {
-        this.side = side;
-        this.height = height;
+    public Triangle(double secondLeg, double firstLeg, Colour colour) {
+        this.secondLeg = secondLeg;
+        this.firstLeg = firstLeg;
         this.colour = colour;
         this.name = this.getClass().getSimpleName();
     }
 
     private double GetHypotenuseLength() {
-       return Math.sqrt(this.height * this.height + this.side * this.side);
+       return Math.sqrt(this.firstLeg * this.firstLeg + this.secondLeg * this.secondLeg);
     }
 
     @Override
     public void Draw() {
-        for (int y = 1; y <= height; y++) {
+        for (int y = 1; y <= firstLeg; y++) {
             for (int x = 1; x <= y; x++) {
                 System.out.print(this.symbol);
             }
@@ -30,7 +30,7 @@ public class Triangle extends Figure {
 
     @Override
     public double GetArea() {
-        return this.side * this.height * 0.5;
+        return this.secondLeg * this.firstLeg * 0.5;
     }
 
     @Override
